@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Switch,
-  Link,
-  Route
-} from 'react-router-dom';
 import './App.css';
-import Subtask1 from './components/Subtask1';
-import Subtask2 from './components/Subtask2';
 
 export default function App() {
   return (
@@ -20,10 +13,7 @@ export default function App() {
         Go to the component programmatically, by checking the box:{" "}
         <input type="checkbox"></input>
       </div>
-        <Switch>
-          <Route path="/subtask1/:id" component={Subtask1}></Route>
-          <Route path="/subtask2" component={Subtask2}></Route>
-        </Switch>
+
     </div>
   );
 }
