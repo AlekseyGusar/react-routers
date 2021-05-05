@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      renderSubtask3: false,
       path: '/',
       value: ' '
     };
@@ -16,12 +17,12 @@ class App extends React.Component {
   handleChange(event) {
     this.setState({ value: event.target.value })
     if (event.target.value % 2 !== 0) {
-      this.setState({ path: '/subtask3' })
+      this.setState({ renderSubtask3: true, path: '/subtask3' })
     }
   };
 
   render() {
-    const { path } = this.state;
+    const { path, renderSubtask3 } = this.state;
 
     return (
       <div className="App">
@@ -35,7 +36,9 @@ class App extends React.Component {
           <input type="checkbox"></input>
         </div>
         <Switch>
-          <Route path="/subtask3" component={Subtask3}></Route>
+          { renderSubtask3 && 
+            <Route path='/subtask3' component={Subtask3}></Route>
+          }
         </Switch>
       </div>
     );
