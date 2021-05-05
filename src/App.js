@@ -22,7 +22,7 @@ export default function App() {
       </div>
       <Switch>
         <Route path="/subtask1/:id" component={Subtask1}></Route>
-        <Route path="/subtask2/:id" component={Subtask2}></Route>
+        <Route path="/subtask2" component={Subtask2}></Route>
       </Switch>
     </div>
   );
