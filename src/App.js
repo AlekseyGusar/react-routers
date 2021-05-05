@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import Subtask3 from './components/Subtask3';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,9 @@ class App extends React.Component {
           Go to the component programmatically, by checking the box:{" "}
           <input type="checkbox"></input>
         </div>
+        <Switch>
+          <Route path="/subtask3" component={Subtask3}></Route>
+        </Switch>
       </div>
     );
   }
