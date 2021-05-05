@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Route exact path="/" component={App}></Route>
+      <Route path="/subtask1" component={App}></Route>
+      <Route path="/subtask2" component={App}></Route>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

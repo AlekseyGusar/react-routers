@@ -2,8 +2,7 @@ import React from 'react';
 import {
   Switch,
   Link,
-  Route,
-  BrowserRouter as Router
+  Route
 } from 'react-router-dom';
 import './App.css';
 import Subtask1 from './components/Subtask1';
@@ -21,12 +20,10 @@ export default function App() {
         Go to the component programmatically, by checking the box:{" "}
         <input type="checkbox"></input>
       </div>
-      <Router>
         <Switch>
           <Route path="/subtask1/:id" component={Subtask1}></Route>
           <Route path="/subtask2" component={Subtask2}></Route>
         </Switch>
-      </Router>
     </div>
   );
 }
