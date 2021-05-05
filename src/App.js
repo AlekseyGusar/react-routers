@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import Subtask3 from './components/Subtask3';
+import Subtask4 from './components/Subtask4';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +10,11 @@ class App extends React.Component {
     this.state = {
       renderSubtask3: false,
       path: '/',
-      value: ' '
+      value: ' ',
+      renderSubtask4: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
   handleChange(event) {
@@ -21,8 +24,16 @@ class App extends React.Component {
     }
   };
 
+  handleCheckboxChange(event) {
+    this.setState({ renderSubtask4: !this.state.renderSubtask4 },() => {
+      if (this.state.renderSubtask4) {
+         this.props.history.push('/subtask4')
+      };
+    })
+  };
+
   render() {
-    const { path, renderSubtask3 } = this.state;
+    const { path, renderSubtask3, renderSubtask4} = this.state;
 
     return (
       <div className="App">
@@ -33,11 +44,18 @@ class App extends React.Component {
         <input size="5" onChange={this.handleChange} type="text" name="input" value={this.state.value}></input> is odd 
         <div className="mainClass">
           Go to the component programmatically, by checking the box:{" "}
-          <input type="checkbox"></input>
+          <input type="checkbox"
+                 name="checkbox"
+                 checked={renderSubtask4}
+                 onChange={this.handleCheckboxChange}>
+          </input>
         </div>
         <Switch>
           { renderSubtask3 && 
             <Route path='/subtask3' component={Subtask3}></Route>
+          }
+          { renderSubtask4 && 
+            <Route path='/subtask4' component={Subtask4}></Route>
           }
         </Switch>
       </div>

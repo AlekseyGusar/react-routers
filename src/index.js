@@ -15,6 +15,7 @@ ReactDOM.render(
         <Route path="/subtask1/:id" component={Subtask1}></Route>
         <Route path="/subtask2" component={Subtask2}></Route>
         <Route path="/subtask3" component={App}></Route>
+        <Route path="/subtask4" component={App}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,
