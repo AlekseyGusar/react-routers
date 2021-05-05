@@ -1,7 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
 
-export default function subtask2({ location, match }) {
+export default function subtask2({ location }) {
     const optionalParameters = queryString.parse(location.search);
     const paramItems = Object.keys(optionalParameters).map((key, index, array) => {
         let coma = ',';

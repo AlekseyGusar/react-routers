@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
+import Subtask1 from './components/Subtask1';
+import Subtask2 from './components/Subtask2';
 import Subtask3 from './components/Subtask3';
 import Subtask4 from './components/Subtask4';
 
@@ -19,7 +21,10 @@ class App extends React.Component {
   handleChange(event) {
     if (event.target.value % 2 !== 0) {
       this.setState({ renderSubtask3: true, path: '/subtask3' })
+    } else {
+      this.setState({ renderSubtask3: false, path: '/' })
     }
+
   };
 
   handleCheckboxChange(event) {
@@ -49,6 +54,8 @@ class App extends React.Component {
           </input>
         </div>
         <Switch>
+          <Route path="/subtask1/:id" component={Subtask1}></Route>
+          <Route path="/subtask2" component={Subtask2}></Route>
           { renderSubtask3 && 
             <Route path='/subtask3' component={Subtask3}></Route>
           }
@@ -60,4 +67,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default withRouter(App);
