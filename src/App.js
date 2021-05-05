@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       renderSubtask3: false,
       path: '/',
-      value: ' ',
       renderSubtask4: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -18,7 +17,6 @@ class App extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value })
     if (event.target.value % 2 !== 0) {
       this.setState({ renderSubtask3: true, path: '/subtask3' })
     }
@@ -41,7 +39,7 @@ class App extends React.Component {
         <h2>The topic 'Routes'</h2>
         <Link to={path}>Show protected information if</Link>
         <span>&nbsp;</span>
-        <input size="5" onChange={this.handleChange} type="text" name="input" value={this.state.value}></input> is odd 
+        <input size="5" onChange={this.handleChange} type="text" name="input"></input> is odd 
         <div className="mainClass">
           Go to the component programmatically, by checking the box:{" "}
           <input type="checkbox"

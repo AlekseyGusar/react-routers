@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Subtask1 from './components/Subtask1';
 import Subtask2 from './components/Subtask2';
+import Subtask4 from './components/Subtask4';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +16,7 @@ ReactDOM.render(
         <Route path="/subtask1/:id" component={Subtask1}></Route>
         <Route path="/subtask2" component={Subtask2}></Route>
         <Route path="/subtask3" component={App}></Route>
-        <Route path="/subtask4" component={App}></Route>
+        <Route path="/subtask4" component={Subtask4}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,
